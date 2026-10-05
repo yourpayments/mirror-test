@@ -42,7 +42,7 @@ mirror_public:
     - git remote add gitflic "git@gitflic.ru:$GIT_USER/$GIT_PROJECT"
     - git remote add github  "git@github.com:$GIT_USER/$GIT_PROJECT"
 
-    - git push -f github public-dist:main
     - git push -f gitflic public-dist:main
+    - git push -f github public-dist:main
   # rules:
   #   - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
