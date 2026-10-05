@@ -36,7 +36,7 @@ mirror_public:
     - git config --global user.email "$COMMIT_USER_EMAIL"
     - git commit -m "$COMMIT_MESSAGE"
 
-    - git remote remove github || true
+    # - git remote remove github || true
     - git remote remove gitflic || true
 
     - git remote add gitflic "git@gitflic.ru:ypmn-test-company/mirror-test.git"
