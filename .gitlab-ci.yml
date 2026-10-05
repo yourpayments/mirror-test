@@ -10,7 +10,7 @@ variables:
   COMMIT_USER_NAME: "GitLab Mirroring Bot"
   COMMIT_USER_EMAIL: "mirror-bot@localhost.com"
   COMMIT_MESSAGE: "Cleanup repository for public mirrors [skip ci]"
-  GIT_USER: "pavlovob"
+  GIT_USER: "gitlab-mirror-user"
   GIT_PROJECT: "mirroring-tests"
 
 mirror_public:
