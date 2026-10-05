@@ -26,6 +26,8 @@ mirror_public:
     - ssh-keyscan github.com >> /root/.ssh/known_hosts
     - ssh-keyscan gitflic.ru >> /root/.ssh/known_hosts
 
+    - ssh -T -o WarnWeakCrypto=no git@gitflic.ru || true
+
   script:
     - git clean -fd
     - git checkout -B public-dist
