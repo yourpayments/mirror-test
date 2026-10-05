@@ -39,7 +39,7 @@ mirror_public:
     - git remote remove github || true
     - git remote remove gitflic || true
 
-    - git remote add gitflic "git@gitflic.ru:ypmn/mirror-test.git"
+    - git remote add gitflic "git@gitflic.ru:ypmn-test-company/mirror-test.git"
     # - git remote add github  "git@github.com:$GIT_USER/$GIT_PROJECT"
 
     - git push -f gitflic public-dist:main
