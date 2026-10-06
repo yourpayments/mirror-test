@@ -11,7 +11,7 @@ variables:
   COMMIT_USER_NAME: "GitLab Mirroring Bot"
   COMMIT_USER_EMAIL: "mirror-bot@localhost.com"
   COMMIT_MESSAGE: "Cleanup repository for public mirrors [skip ci]"
-  GIT_PROJECT: "mirror-test.git"
+  # GIT_PROJECT: "mirror-test.git"
   GIT_USER_GITHUB: "yourpayments"
   GIT_USER_GITFLIC: "ypmn"
 
@@ -32,8 +32,8 @@ mirroring:
     - git remote remove github || true
     - git remote remove gitflic || true
 
-    - git remote add gitflic "git@gitflic.ru:$GIT_USER_GITFLIC/$GIT_PROJECT"
-    - git remote add github  "git@github.com:$GIT_USER_GITHUB/$GIT_PROJECT"
+    - git remote add gitflic "git@gitflic.ru:$GIT_USER_GITFLIC/$CI_PROJECT_NAME.git"
+    - git remote add github  "git@github.com:$GIT_USER_GITHUB/$CI_PROJECT_NAME.git"
 
     - git clean -fd
     - git checkout -B public-dist
