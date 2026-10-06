@@ -32,6 +32,7 @@ mirroring:
     - git remote remove github || true
     - git remote remove gitflic || true
 
+    - echo "Текущее имя проекта:" $CI_PROJECT_NAME
     - git remote add gitflic "git@gitflic.ru:$GIT_USER_GITFLIC/$CI_PROJECT_NAME.git"
     - git remote add github  "git@github.com:$GIT_USER_GITHUB/$CI_PROJECT_NAME.git"
 
