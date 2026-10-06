@@ -29,6 +29,12 @@ mirroring:
     - ssh-keyscan gitflic.ru >> /root/.ssh/known_hosts
 
   script:
+    - git remote remove github || true
+    - git remote remove gitflic || true
+
+    - git remote add gitflic "git@gitflic.ru:$GIT_USER_GITFLIC/$GIT_PROJECT"
+    - git remote add github  "git@github.com:$GIT_USER_GITHUB/$GIT_PROJECT"
+
     - git clean -fd
     - git checkout -B public-dist
 
@@ -38,14 +44,8 @@ mirroring:
     - git config --global user.email "$COMMIT_USER_EMAIL"
     - git commit -m "$COMMIT_MESSAGE"
 
-    - git remote remove github || true
-    - git remote remove gitflic || true
-
-    - git remote add gitflic "git@gitflic.ru:$GIT_USER_GITFLIC/$GIT_PROJECT"
-    - git remote add github  "git@github.com:$GIT_USER_GITHUB/$GIT_PROJECT"
-
     - git push -f gitflic public-dist:main
-    - git push -f github public-dist:main
+    - git push -f github  public-dist:main
 
   # rules:
   #   - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
